@@ -1,0 +1,49 @@
+# Folder view configuration files
+**/.DS_Store
+.DS_Store
+.DS_Store?
+Desktop.ini
+
+# Thumbnail cache files
+._*
+Thumbs.db
+
+# Files that might appear on external disks
+.Spotlight-V100
+.Spotlight-V100/
+.Trashes
+
+__MACOSX/
+
+# Compiled Python files
+*.pyc
+
+# Compiled C++ files
+*.out
+
+# Application specific files
+venv
+node_modules
+.sass-cache
+
+# Temp File
+*.swp
+*.swa
+*.swo
+
+# github merge file
+*.orig
+
+# macOS
+.AppleDouble
+.LSOverride
+Icon
+# Files that might appear on external disk
+.Spotlight
+.TemporaryItems
+.fseventsd
+.DocumentRevisions-V100
+
+.vscode/
+
+mkdocs.yml
