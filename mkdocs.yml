@@ -46,8 +46,8 @@ theme:
     - navigation.footer # 页脚导航
     - content.action.view # 在 GitHub 上查看此页面的来源
   font: # 字体
-    text: Ubuntu # 正文，默认为 Roboto
-    code: Ubuntu Mono # 代码，默认为 Roboto Mono
+    text: Roboto # 正文，默认为 Roboto
+    code: JetBrains Mono # 代码，默认为 Roboto Mono
   palette: #切换昼夜模式的颜色，审美差就用默认，专业点就自定义
     - media: "(prefers-color-scheme)"
       toggle:
@@ -80,9 +80,14 @@ theme:
 # 插件（我使用了搜索和折叠子页面插件）可选
 plugins:
   - search:
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
       lang:
-        - en
         - zh
+        - en
+      pipeline:
+        - stemmer
+        - stopWordFilter
+        - trimmer
   # - optimize
       # enabled: !ENV [CI, false] # 此配置仅在持续集成（CI）期间启用插件
   # - privacy
@@ -90,7 +95,13 @@ plugins:
       tags_file: tags.md
   - offline
   - git-revision-date-localized:
+      type: date
       enable_creation_date: true
+      fallback_to_build_date: true # 在 git 不可用时返回到 mkdocs build 执行的时间
+      exclude:
+          - index.md
+          - tags.md
+      strict: false
   # - mermaid2:
   #     arguments:
   #       securityLevel: "loose" # 允许图中加入链接
@@ -134,7 +145,10 @@ markdown_extensions:
 
 
 # 自定义部分（社交的链接）可选
-# extra:
+extra:
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX
 # social:
 #   - icon: fontawesome/brands/github
 #     link: https://github.com/seatable/seatable-scripts/
