@@ -3,25 +3,25 @@
 # 网站配置（网站名、作者）
 site_name: Elysian's Wiki
 site_author: Elysian
-# site_url: https://michael18811380328.git
+site_url: https://truelysian.github.io/wiki/
 
 # 博客的路径（根目录下面新建对应的目录，通常是 DOCS）
 docs_dir: ./docs
 
 # github 上对应的仓库和路径
-# repo_name: xxx
-# repo_url: xxx
+repo_name: wiki
+repo_url: https://github.com/TruElysian/wiki
 
 # 版权显示
-copyright: ©
+copyright: Copyright &copy; 2024 Elysian
 
 # 项目样式包
 theme:
   name: material
   language: "zh"
-  # icon:
-  #   repo: fontawesome/brands/git-alt # 存储库图标
-  # logo: fontawesome-solid-brain # 默认 logo 图标
+  icon:
+    logo: material/library-shelves
+    repo: fontawesome/brands/git-alt # 存储库图标
   # favicon: assets/seatable-favicon.ico
   features: #导航
     - navigation.instant # 即时加载
@@ -42,27 +42,55 @@ theme:
     - search.share # 搜索共享
     - header.autohide # 标题自动隐藏
     - announce.dismiss # 标记为已读（付费功能）
+    - content.code.copy # 代码复制按钮
+    - navigation.footer # 页脚导航
+    - content.action.view # 在 GitHub 上查看此页面的来源
   font: # 字体
     text: Ubuntu # 正文，默认为 Roboto
     code: Ubuntu Mono # 代码，默认为 Roboto Mono
   palette: #切换昼夜模式的颜色，审美差就用默认，专业点就自定义
-    - media: "(prefers-color-scheme: light)"
-      scheme: default # 配色方案：浅色模式
-      primary: indigo # 原色，默认蓝，用于标题、侧边栏、文本链接和其他几个组件
-      accent: indigo # 强调色，默认蓝，可以交互的元素如悬停链接、按钮和滚动条
+    - media: "(prefers-color-scheme)"
       toggle:
-        icon: material/weather-sunny # 图标，太阳
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
-      scheme: slate # 配色方案：深色模式
+      scheme: slate
       toggle:
-        icon: material/weather-night # 图标，月亮
-        name: Switch to light mode
+        icon: material/brightness-4
+        name: Switch to system preference
+    # - media: "(prefers-color-scheme: light)"
+    #   scheme: default # 配色方案：浅色模式
+    #   primary: indigo # 原色，默认蓝，用于标题、侧边栏、文本链接和其他几个组件
+    #   accent: indigo # 强调色，默认蓝，可以交互的元素如悬停链接、按钮和滚动条
+    #   toggle:
+    #     icon: material/weather-sunny # 图标，太阳
+    #     name: Switch to dark mode
+    # - media: "(prefers-color-scheme: dark)"
+    #   scheme: slate # 配色方案：深色模式
+    #   toggle:
+    #     icon: material/weather-night # 图标，月亮
+    #     name: Switch to light mode
+
 
 # 插件（我使用了搜索和折叠子页面插件）可选
 plugins:
-  - search
+  - search:
+      lang:
+        - en
+        - zh
   # - optimize
+      # enabled: !ENV [CI, false] # 此配置仅在持续集成（CI）期间启用插件
+  # - privacy
+  - tags:
+      tags_file: tags.md
+  - offline
+  - git-revision-date-localized:
+      enable_creation_date: true
   # - mermaid2:
   #     arguments:
   #       securityLevel: "loose" # 允许图中加入链接
@@ -78,20 +106,14 @@ plugins:
 # 扩展（可选）
 markdown_extensions:
   - abbr # 缩写或名词
+  - attr_list
+  - def_list
+  - md_in_html
+  - tables # Markdown 表
   - admonition # 警告
   - pymdownx.details # 细节折叠
   - pymdownx.superfences # 超级围栏
-  - pymdownx.arithmatex
-  # - markdown.extensions.admonition
-  - markdown.extensions.attr_list
-  # - markdown.extensions.codehilite:
-  #     guess_lang: true
-  - markdown.extensions.def_list
-  - markdown.extensions.footnotes
-  # - markdown.extensions.meta
-  # - markdown.extensions.toc:
-  #     permalink: true
-  #     toc_depth: "1-4"
+  # - markdown.extensions.footnotes
   - pymdownx.arithmatex: # 数学公式
       generic: true
   - pymdownx.betterem: # 粗体斜体
@@ -101,16 +123,28 @@ markdown_extensions:
   - pymdownx.smartsymbols # 智能符号
   - pymdownx.tabbed: # 内容选项卡
       alternate_style: true # 启用内容选项卡替代样式，必须开启
+  - pymdownx.keys # 渲染键盘键和组合
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+
 
 # 自定义部分（社交的链接）可选
 # extra:
 # social:
 #   - icon: fontawesome/brands/github
 #     link: https://github.com/seatable/seatable-scripts/
-# extra_javascript:
-#   # other extra java script
-#   - js/mathjax-config.js
-#   - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+extra_javascript:
+  - javascripts/katex.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
 
 # # 文件树
 # nav:
