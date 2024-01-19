@@ -1,0 +1,121 @@
+# update: 2024.01.19
+
+# 网站配置（网站名、作者）
+site_name: Elysian's Wiki
+site_author: Elysian
+# site_url: https://michael18811380328.git
+
+# 博客的路径（根目录下面新建对应的目录，通常是 DOCS）
+docs_dir: ./docs
+
+# github 上对应的仓库和路径
+# repo_name: xxx
+# repo_url: xxx
+
+# 版权显示
+copyright: ©
+
+# 项目样式包
+theme:
+  name: material
+  language: "zh"
+  # icon:
+  #   repo: fontawesome/brands/git-alt # 存储库图标
+  # logo: fontawesome-solid-brain # 默认 logo 图标
+  # favicon: assets/seatable-favicon.ico
+  features: #导航
+    - navigation.instant # 即时加载
+    - navigation.instant.prefetch # 即时预取
+    - navigation.instant.progress # 进度指标
+    - navigation.tracking # 锚点跟踪
+    - navigation.tabs # 导航选项卡
+    - navigation.tabs.sticky # 粘性导航选项卡
+    - navigation.sections # 次级目录在侧边栏中呈现为组，与 tabs 同存则有 2 级导航
+    - navigation.path
+    #    - navigation.expand  # 左侧边栏全展开，取消则折叠其他只展开当选
+    - navigation.indexes # 次级索引页，直接将文档附加到章节，提供概览页面，在相应文件夹中创建 index.md 添加到导航 nav 开头。不兼容 toc.integrate。
+    - toc.follow # 锚跟随，文章小标题目录侧边栏自动滚动，以便活动锚点始终可见（付费功能）
+    #    - toc.integrate  #导航集成，文章小标题目录是左侧边栏的一部分
+    - navigation.top # 返回顶端
+    - search.suggest # 搜索建议，省略回车
+    - search.highlight # 搜索词高亮突出显示
+    - search.share # 搜索共享
+    - header.autohide # 标题自动隐藏
+    - announce.dismiss # 标记为已读（付费功能）
+  font: # 字体
+    text: Ubuntu # 正文，默认为 Roboto
+    code: Ubuntu Mono # 代码，默认为 Roboto Mono
+  palette: #切换昼夜模式的颜色，审美差就用默认，专业点就自定义
+    - media: "(prefers-color-scheme: light)"
+      scheme: default # 配色方案：浅色模式
+      primary: indigo # 原色，默认蓝，用于标题、侧边栏、文本链接和其他几个组件
+      accent: indigo # 强调色，默认蓝，可以交互的元素如悬停链接、按钮和滚动条
+      toggle:
+        icon: material/weather-sunny # 图标，太阳
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate # 配色方案：深色模式
+      toggle:
+        icon: material/weather-night # 图标，月亮
+        name: Switch to light mode
+
+# 插件（我使用了搜索和折叠子页面插件）可选
+plugins:
+  - search
+  # - optimize
+  # - mermaid2:
+  #     arguments:
+  #       securityLevel: "loose" # 允许图中加入链接
+  #       startOnLoad: true # 加载后启动
+  #       fontFamily: '"思源黑体","华文楷体","仿宋","宋体"'
+  # - awesome-pages
+  # - git-revision-date # 每页底部显示文档最后更新日期，安装 pip install mkdocs-git-revision-date-plugin
+  # - git-revision-date-localized  # 每个页面底部添加本地化更新和创建日期，安装 pip install mkdocs-git-revision-date-localized-plugin
+  #     type: date  # 日期格式，有效值为 date、datetime、iso_date、iso_datetimetimeago
+  #     fallback_to_build_date: true  # 默认 false，启用则回退到 mkdocs build 执行的时间
+  #     enable_creation_date: true  # 最后更新日期旁边显示与页面关联的文件的创建日期
+
+# 扩展（可选）
+markdown_extensions:
+  - abbr # 缩写或名词
+  - admonition # 警告
+  - pymdownx.details # 细节折叠
+  - pymdownx.superfences # 超级围栏
+  - pymdownx.arithmatex
+  # - markdown.extensions.admonition
+  - markdown.extensions.attr_list
+  # - markdown.extensions.codehilite:
+  #     guess_lang: true
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  # - markdown.extensions.meta
+  # - markdown.extensions.toc:
+  #     permalink: true
+  #     toc_depth: "1-4"
+  - pymdownx.arithmatex: # 数学公式
+      generic: true
+  - pymdownx.betterem: # 粗体斜体
+      smart_enable: all
+  - pymdownx.highlight # 代码高亮，对代码块（SuperFences）和行内代码块（InlineHilite）的语法突出显示
+  - pymdownx.inlinehilite # 行内高亮
+  - pymdownx.smartsymbols # 智能符号
+  - pymdownx.tabbed: # 内容选项卡
+      alternate_style: true # 启用内容选项卡替代样式，必须开启
+
+# 自定义部分（社交的链接）可选
+# extra:
+# social:
+#   - icon: fontawesome/brands/github
+#     link: https://github.com/seatable/seatable-scripts/
+# extra_javascript:
+#   # other extra java script
+#   - js/mathjax-config.js
+#   - https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+# # 文件树
+# nav:
+#   - Home: README.md
+#   - Data structure: data-structure.md
+#   - Base: base.md
+#   - Output: output.md
+#   - Utils: utils.md
