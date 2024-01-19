@@ -1,7 +1,5 @@
 ---
 title: Rime
-date: 2024-01-18
-update: 2024-01-18
 tags:
   - Rime
   - Software

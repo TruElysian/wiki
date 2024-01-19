@@ -1,8 +1,7 @@
 ---
 title: 本地部署 Langchain-Chatchat
-date: 2024-01-04
-update: 2024-01-04
-tags: LLM
+tags:
+ - LLM
 ---
 
 # 本地部署 Langchain-Chatchat

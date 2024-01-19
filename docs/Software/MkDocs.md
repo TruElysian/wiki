@@ -1,7 +1,5 @@
 ---
 title: MkDocs
-date: 2023-12-06
-update: 2024-01-16
 tags:
   - MkDocs
   - Software

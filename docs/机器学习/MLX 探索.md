@@ -1,8 +1,9 @@
 ---
 title: MLX 探索
-date: 2024-01-04
-update: 2024-01-04
-tags: MLX LLM macOS
+tags:
+ - MLX
+ - LLM
+ - macOS
 ---
 
 # MLX 探索
