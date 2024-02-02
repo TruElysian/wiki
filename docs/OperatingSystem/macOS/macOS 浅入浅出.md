@@ -18,4 +18,4 @@ FuckGFW
 
 ---
 
-先安装包管理器 Homebrew，见 [Homebrew 命令]
+先安装包管理器 Homebrew，见 [Homebrew 命令](https://truelysian.github.io/wiki/OperatingSystem/macOS/Homebrew%20命令.html)

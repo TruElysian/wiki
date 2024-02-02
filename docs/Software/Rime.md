@@ -102,7 +102,7 @@ git clone https://github.com/iDvel/rime-ice.git Rime && cd Rime
 那 macOS 上的 Rime 中配置的 `sync_dir: "~/Library/Mobile Documents/iCloud~dev~fuxiao~app~hamsterapp/Documents/sync"`
 
 !!! note
-    注意替换上文中的 `${Home}` 变量
+    注意替换上文中的 `${HOME}` 变量
 
 ## 删除英文模式
 

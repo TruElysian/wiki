@@ -55,6 +55,8 @@ theme:
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      # primary: deep purple
+      # accent: pink
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -145,10 +147,10 @@ markdown_extensions:
 
 
 # 自定义部分（社交的链接）可选
-extra:
-  analytics:
-    provider: google
-    property: G-XXXXXXXXXX
+# extra:
+#   analytics:
+#     provider: google
+#     property: G-XXXXXXXXXX
 # social:
 #   - icon: fontawesome/brands/github
 #     link: https://github.com/seatable/seatable-scripts/
