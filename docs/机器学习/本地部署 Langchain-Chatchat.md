@@ -6,7 +6,28 @@ tags:
 
 # 本地部署 Langchain-Chatchat
 
-## 一 环境配置
+## Windows 部署
+
+---
+
+请先安装 CUDA 工具 12.1
+
+`Langchain-Chatchat` 采用的是 `v0.2.10` 版本
+
+```sh
+conda create --name LangChat python=3.11.7
+conda activate LangChat
+
+conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+pip install torch
+
+pip install -r requirements.txt
+pip install -r requirements_webui.txt
+```
+
+修改 `configs` 文件夹中的配置文件，然后启动
+
+## macOS 部署
 
 ---
 
@@ -64,3 +85,4 @@ pip install --upgrade langchain
 ---
 
 - [chatchat-space/Langchain-Chatchat](https://github.com/chatchat-space/Langchain-Chatchat)
+- [开发环境部署](https://github.com/chatchat-space/Langchain-Chatchat/wiki/开发环境部署#常规模式本地部署方案)

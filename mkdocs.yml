@@ -1,7 +1,7 @@
-# update: 2024.01.19
+# update: 2024.02.02
 
 # 网站配置（网站名、作者）
-site_name: Elysian's Wiki
+site_name: Elysian Wiki
 site_author: Elysian
 site_url: https://truelysian.github.io/wiki/
 
@@ -147,10 +147,10 @@ markdown_extensions:
 
 
 # 自定义部分（社交的链接）可选
-# extra:
-#   analytics:
-#     provider: google
-#     property: G-XXXXXXXXXX
+extra:
+  analytics:
+    provider: google
+    property: G-X6VV5MMGM0
 # social:
 #   - icon: fontawesome/brands/github
 #     link: https://github.com/seatable/seatable-scripts/
